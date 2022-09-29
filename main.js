@@ -1,22 +1,34 @@
-let email =document.getElementById("email");
-let password =document.getElementById("password");
+function signup(){
+  event.preventDefault();
+    let username =document.getElementById("username");
+    let email =document.getElementById("email");
+    let password =document.getElementById("password");
+    let user={
+        username:username.value,
+        email:email.value,
+        password:password.value
+    }
+    localStorage.setItem("user",JSON.stringify(user));
+    console.log(user);
+    console.log("user created");
+}
 
-let user = {
-    email: email.value,
-    password: password.value
-};
-// let json = JSON.stringify(user);
-// localStorage.setItem("user", json);
-// console.log("user add");
 
 
 
 function login(){
-  event.preventDefault();
+    event.preventDefault();
     let email =document.getElementById("email");
     let password =document.getElementById("password");
-    // let result = document.getElementById("result");
-    let user=localStorage.getItem("user");
-    let data=JSON.parse(user);
-    console.log(data);
+    let user={
+        email:email.value,
+        password:password.value
+    }
+    let user1=JSON.parse(localStorage.getItem("user"));
+    if(user.email==user1.email && user.password==user1.password){
+        console.log("login successful");
+    }
+    else{
+        console.log("login failed");
+    }
 }
