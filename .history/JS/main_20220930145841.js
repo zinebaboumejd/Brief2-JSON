@@ -13,7 +13,7 @@ function signup(){
       localStorage.setItem("user",JSON.stringify(user));
       console.log(user);
       console.log("user created");
-      window.location.href="../views/home.html";
+      window.location.href="../HTML/home.html";
   }
   
   
@@ -31,7 +31,7 @@ function signup(){
       if(user.email==user1.email && user.password==user1.password){
           console.log("login successful");
           if(user1.rool==0){
-            window.location.href="../views/home.html";
+            window.location.href="../HTML/home.html";
           }else{
               window.location.href="admin.html";
           }
@@ -43,11 +43,14 @@ function signup(){
       }
   }
   function logout(){
-      window.location.href="../views/home.html";
+      window.location.href="../HTML/home.html";
   }
   
   
 //   Create an interactive tree structure from json using D3
+
+
+
 
 
 
