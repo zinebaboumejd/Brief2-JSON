@@ -10,9 +10,9 @@
 </head>
 
 <body class="bg-black h-screen w-screen">
-    <div class=" text-white">
-        <div class="flex justify-between">
-            <img class="w-14 h-14 m-2" src="../src/images/shape-red-header-x2.png" alt="simplon logo">
+    <div class="text-white">
+        <div class="flex justify-between bg-slate-50 bg-opacity-10">
+            <img class="w-14 h-14 m-2 ml-4" src="../src/images/shape-red-header-x2.png" alt="simplon logo">
             <div class="dropdown_list p-2">
                 <button class="flex dropdown_button gap-2 bg-white text-black m-2 mr-6 p-3 rounded-lg "
                     onclick="dropMenu()">
@@ -29,9 +29,11 @@
                     </div>
                     <div class="flex gap-2 pb-2 hover:bg-red-200 rounded-md p-2">
                         <img class="w-6 h-6" src="/src/images/logout.png" alt="logout icon">
-                        <li class="">
-                            <a href="">Logout</a>
-                        </li>
+                        <a href="./">
+                            <li class="">
+                                Logout
+                            </li>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -39,23 +41,13 @@
 
         <div class="bg-white m-10 rounded-lg h-72 border-t-gray-200 border-8">
             <div class="flex justify-end gap-3 bg-slate-500">
-                <div class="">
-                    <button class="rounded-lg text-white bg-green-400 p-1">
-                        Save
-                    </button>
-                </div>
-                <div class="text-white rounded-lg bg-red-400 p-1">
-                    <button>
-                        Delete
-                    </button>
-                </div>
+               <textarea class="flex w-full" placeholder="enter " name="" id="" cols="30" rows="10"></textarea>
             </div>
         </div>
         <div id="tree" class="flex justify-end gap-3 bg-slate-500">
 
         </div>
     </div>
-
 
     <script>
         function dropMenu() {
