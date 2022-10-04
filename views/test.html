@@ -5,10 +5,10 @@
 
     <title>Collapsible Tree Example</title>
 
-    <style>
-/*----------------genealogy-scroll----------*/
+    
+<!-- ----------------genealogy-scroll------------>
  
-.genealogy-scroll::-webkit-scrollbar {
+<!-- .genealogy-scroll::-webkit-scrollbar {
     width: 5px;
     height: 8px;
 }
@@ -134,19 +134,21 @@
    fill: none;
    stroke: #ccc;
    stroke-width: 2px;
- }
+ } -->
+ <style>
  #tree {
     height: 200px;
     width: 800px;
     border: 1px solid black;
-    background-color: cadetblue;
+    background-color: black;
+    color: #ccc;
  }
-    </style>
-
+   
+</style>
   </head>
 
   <body>
-    <div class="body genealogy-body genealogy-scroll">
+    <!-- <div class="body genealogy-body genealogy-scroll">
         <div class="genealogy-tree">
             <ul>
                 <li>
@@ -541,10 +543,11 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 <div >
     <input type="text" id="tree">
-    <button id="btn" onclick="Click()">Click</button>
+    
+    <button class="border-4 bg-current" id="btn" onclick="Click()">Click</button>
 </div>
 <!-- load the d3.js library --> 
 <script src="http://d3js.org/d3.v3.min.js"></script>
