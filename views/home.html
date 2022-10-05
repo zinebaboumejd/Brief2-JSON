@@ -2,78 +2,61 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>json to graph</title>
+    <meta charset="utf-8">
+    <title>Json Graphe</title>
+
 </head>
 
-<body class="bg-black h-screen w-screen">
-    <div class="text-white">
-        <div class="flex justify-between bg-slate-50 bg-opacity-10">
-            <img class="w-14 h-14 m-2 ml-4" src="../src/images/shape-red-header-x2.png" alt="simplon logo">
-            <div class="dropdown_list p-2">
-                <button class="flex dropdown_button gap-2 bg-white text-black m-2 mr-6 p-3 rounded-lg "
-                    onclick="dropMenu()">
-                    <img class="w-4 h-4 mt-1 " src="/src/images/settings.png" alt="">
-                    <p class="font-bold">Settings</p>
-
-    <div class=" text-white">
-        <div class="flex justify-between">
-
-            <h4 class="text-2xl">Visualize JSON Data Graph</h4>
-            <div class="flex ">
-                <button class="bg-white text-black m-2 p-1 rounded-lg ">
-                    <a href="./index.html">Logout</a>
-                </button>
-                <div id="courses_id" class="courses list-none shadow-lg shadow-black bg-white text-black absolute z-10
-                     -mt-2 rounded-md -ml-2 pt-1 pb-2 p-7">
-                    <div class="flex gap-2 pb-2 hover:bg-green-200 rounded-md p-2">
-                        <img class="w-6 h-6" src="/src/images/user.png" alt="user icon">
-                        <li class="mb-1">
-                            <a href="">Profile</a>
-                        </li>
-                    </div>
-                    <div class="flex gap-2 pb-2 hover:bg-red-200 rounded-md p-2">
-                        <img class="w-6 h-6" src="/src/images/logout.png" alt="logout icon">
-                        <a href="./">
-                            <li class="">
-                                Logout
-                            </li>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white m-10 rounded-lg h-72 border-t-gray-200 border-8">
-            <div class="flex justify-end gap-3 bg-slate-500">
-               <textarea class="flex w-full" placeholder="enter " name="" id="" cols="30" rows="10"></textarea>
-            </div>
-        </div>
-        <div id="tree" class="flex justify-end gap-3 bg-slate-500">
-
-        </div>
-    </div>
+<body>
+    <div id="root"></div>
+    <div >
+    <input type="text" id="tree">
+    
+    <button class="border-4 bg-current" id="btn">Click</button>
+</div>
 
     <script>
-        function dropMenu() {
-            var courses = document.getElementById("courses_id");
+        const obj =
+        {
+        squadName: "Super hero squad",
+        homeTown: "Metro City",
+        formed: 2016,
+        secretBase: "Super tower",
+        active: true,
+        members: [
+          {
+            name: "Molecule Man",
+            age: 29,
+            secretIdentity: "Dan Jukes",
+            powers: ["Radiation resistance", "Turning tiny", "Radiation blast"],
+          },
+          {
+            name: "Molecule Man",
+            age: 29,
+            secretIdentity: "Dan Jukes",
+            powers: ["Radiation resistance", "Turning tiny", "Radiation blast"],
+          }
+        ],
+        secretBase: "Super tower",
+        active: true,
+      };
+        let level = -1;
 
-            if (courses.style.display == "block") {
-                courses.style.display = "none";
-            } else {
-                courses.style.display = "block";
-            }
-        }
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropdown_button')) {
-                document.getElementById('courses_id')
-                    .style.display = "none";
-            }
-        }   
+        const root = document.getElementById("root");
+        const printObj = (ob, parent) => {
+            level++;
+            Object.keys(ob).forEach((e) => {
+                const div = document.createElement("div");
+                const child = document.createElement("input");
+                child.setAttribute("style", `margin-left: ${level * 20}px`);
+                child.setAttribute("disabled", "");
+                child.value = typeof ob[e] === "object" ? e : ob[e];
+                div.appendChild(child);
+                parent.appendChild(div);
+                if (typeof ob[e] === ("object" || "array")) printObj(ob[e], div);
+            });
+        };
+        printObj(obj, root);
     </script>
-
 </body>
 </html>

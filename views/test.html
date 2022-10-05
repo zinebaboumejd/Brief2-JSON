@@ -1,154 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
 
-    <title>Collapsible Tree Example</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>json to graph</title>
+</head>
 
-    
-<!-- ----------------genealogy-scroll------------>
- 
-<!-- .genealogy-scroll::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
-}
-.genealogy-scroll::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: #e4e4e4;
-}
-.genealogy-scroll::-webkit-scrollbar-thumb {
-    background: #212121;
-    border-radius: 10px;
-    transition: 0.5s;
-}
-.genealogy-scroll::-webkit-scrollbar-thumb:hover {
-    background: #d5b14c;
-    transition: 0.5s;
-}
- 
- 
-/*----------------genealogy-tree----------*/
-.genealogy-body{
-    white-space: nowrap;
-    overflow-y: hidden;
-    padding: 50px;
-    min-height: 500px;
-    padding-top: 10px;
-}
-.genealogy-tree ul {
-    padding-top: 20px; 
-    position: relative;
-    padding-left: 0px;
-    display: flex;
-}
-.genealogy-tree li {
-    float: left; text-align: center;
-    list-style-type: none;
-    position: relative;
-    padding: 20px 5px 0 5px;
-}
-.genealogy-tree li::before, .genealogy-tree li::after{
-    content: '';
-    position: absolute; 
-  top: 0; 
-  right: 50%;
-    border-top: 2px solid #ccc;
-    width: 50%; 
-  height: 18px;
-}
-.genealogy-tree li::after{
-    right: auto; left: 50%;
-    border-left: 2px solid #ccc;
-}
-.genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
-    display: none;
-}
-.genealogy-tree li:only-child{ 
-    padding-top: 0;
-}
-.genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after{
-    border: 0 none;
-}
-.genealogy-tree li:last-child::before{
-    border-right: 2px solid #ccc;
-    border-radius: 0 5px 0 0;
-    -webkit-border-radius: 0 5px 0 0;
-    -moz-border-radius: 0 5px 0 0;
-}
-.genealogy-tree li:first-child::after{
-    border-radius: 5px 0 0 0;
-    -webkit-border-radius: 5px 0 0 0;
-    -moz-border-radius: 5px 0 0 0;
-}
-.genealogy-tree ul ul::before{
-    content: '';
-    position: absolute; top: 0; left: 50%;
-    border-left: 2px solid #ccc;
-    width: 0; height: 20px;
-}
-.genealogy-tree li a{
-    text-decoration: none;
-    color: #666;
-    font-family: arial, verdana, tahoma;
-    font-size: 11px;
-    display: inline-block;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-}
- 
-.genealogy-tree li a:hover+ul li::after, 
-.genealogy-tree li a:hover+ul li::before, 
-.genealogy-tree li a:hover+ul::before, 
-.genealogy-tree li a:hover+ul ul::before{
-    border-color:  #fbba00;
-}
- 
-/*--------------memeber-card-design----------*/
-.member-view-box{
-    padding:0px 20px;
-    text-align: center;
-    border-radius: 4px;
-    position: relative;
-}
-.member-image{
-    width: 60px;
-    position: relative;
-}
-.member-image img{
-    width: 60px;
-    height: 60px;
-    border-radius: 6px;
-  background-color :#000;
-  z-index: 1;
-}
- .node circle {
-   fill: #fff;
-   stroke: steelblue;
-   stroke-width: 3px;
- }
+<body class="bg-black h-screen w-screen">
+    <div class="text-white">
+        <div class="flex justify-between bg-slate-50 bg-opacity-10">
+            <img class="w-14 h-14 m-2 ml-4" src="../src/images/shape-red-header-x2.png" alt="simplon logo">
+            <div class="dropdown_list p-2">
+                <button class="flex 
+                    onclick="dropMenu()">
+                    
+    <div class=" text-white">
+        <div class="flex justify-between">
 
- .node text { font: 12px sans-serif; }
+            <h4 class="text-xl text-center">Visualize JSON Data Graph</h4>
+            <div class="flex ">
+                <button class="bg-white text-black m-2 p-1 rounded-lg dropdown_button gap-2 bg-white text-black m-2 mr-6 p-3 rounded-lg " ">
+                    <a href="./index.html">Logout</a>
+                </button>
+                <div id="courses_id" class="courses list-none shadow-lg shadow-black bg-white text-black absolute z-10
+                     -mt-2 rounded-md -ml-2 pt-1 pb-2 p-7">
+                    <div class="flex gap-2 pb-2 hover:bg-red-200 rounded-md p-2">
+                        <img class="w-6 h-6" src="/src/images/logout.png" alt="logout icon">
+                        <a href="./">
+                            <li class="">
+                                Logout
+                            </li>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
- .link {
-   fill: none;
-   stroke: #ccc;
-   stroke-width: 2px;
- } -->
- <style>
- #tree {
-    height: 200px;
-    width: 800px;
-    border: 1px solid black;
-    background-color: black;
-    color: #ccc;
- }
-   
-</style>
-  </head>
+        <div class="bg-white m-10 rounded-lg h-72 border-t-gray-200 border-8">
+            <div class="flex justify-end gap-3 bg-slate-500">
+               <textarea class="flex w-full" placeholder="enter " name="" id="" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div id="tree" class="flex justify-end gap-3 bg-slate-500">
 
-  <body>
-    <!-- <div class="body genealogy-body genealogy-scroll">
+        </div>
+    </div>
+
+    <script>
+        function dropMenu() {
+            var courses = document.getElementById("courses_id");
+
+            if (courses.style.display == "block") {
+                courses.style.display = "none";
+            } else {
+                courses.style.display = "block";
+            }
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropdown_button')) {
+                document.getElementById('courses_id')
+                    .style.display = "none";
+            }
+        }   
+    </script>
+
+</body>
+</html>
+ <!-- <div class="body genealogy-body genealogy-scroll">
         <div class="genealogy-tree">
             <ul>
                 <li>
@@ -544,40 +465,132 @@
             </ul>
         </div>
     </div> -->
-<div >
-    <input type="text" id="tree">
-    
-    <button class="border-4 bg-current" id="btn" onclick="Click()">Click</button>
-</div>
-<!-- load the d3.js library --> 
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="../tree.js"></script>
-<script>
-
-    // function Click() {
-    //     var treeData = document.getElementById("tree").value;
-    //     var treeData = JSON.parse(treeData);
-    // }
-    // json file
-// recupere les données du fichier json
-// call file treeData.json
-
-
-</script>
+    <!-- ----------------genealogy-scroll------------>
  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-$(function () {
-    $('.genealogy-tree ul').hide();
-    $('.genealogy-tree>ul').show();
-    $('.genealogy-tree ul.active').show();
-    $('.genealogy-tree li').on('click', function (e) {
-        var children = $(this).find('> ul');
-        if (children.is(":visible")) children.hide('fast').removeClass('active');
-        else children.show('fast').addClass('active');
-        e.stopPropagation();
-    });
-});
-</script>
-  </body>
-</html>
+<!-- .genealogy-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+.genealogy-scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+.genealogy-scroll::-webkit-scrollbar-thumb {
+    background: #212121;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.genealogy-scroll::-webkit-scrollbar-thumb:hover {
+    background: #d5b14c;
+    transition: 0.5s;
+}
+ 
+ 
+/*----------------genealogy-tree----------*/
+.genealogy-body{
+    white-space: nowrap;
+    overflow-y: hidden;
+    padding: 50px;
+    min-height: 500px;
+    padding-top: 10px;
+}
+.genealogy-tree ul {
+    padding-top: 20px; 
+    position: relative;
+    padding-left: 0px;
+    display: flex;
+}
+.genealogy-tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+.genealogy-tree li::before, .genealogy-tree li::after{
+    content: '';
+    position: absolute; 
+  top: 0; 
+  right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%; 
+  height: 18px;
+}
+.genealogy-tree li::after{
+    right: auto; left: 50%;
+    border-left: 2px solid #ccc;
+}
+.genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
+    display: none;
+}
+.genealogy-tree li:only-child{ 
+    padding-top: 0;
+}
+.genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after{
+    border: 0 none;
+}
+.genealogy-tree li:last-child::before{
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.genealogy-tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+.genealogy-tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0; height: 20px;
+}
+.genealogy-tree li a{
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+ 
+.genealogy-tree li a:hover+ul li::after, 
+.genealogy-tree li a:hover+ul li::before, 
+.genealogy-tree li a:hover+ul::before, 
+.genealogy-tree li a:hover+ul ul::before{
+    border-color:  #fbba00;
+}
+ 
+/*--------------memeber-card-design----------*/
+.member-view-box{
+    padding:0px 20px;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+}
+.member-image{
+    width: 60px;
+    position: relative;
+}
+.member-image img{
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+  background-color :#000;
+  z-index: 1;
+}
+ .node circle {
+   fill: #fff;
+   stroke: steelblue;
+   stroke-width: 3px;
+ }
+
+ .node text { font: 12px sans-serif; }
+
+ .link {
+   fill: none;
+   stroke: #ccc;
+   stroke-width: 2px;
+ } -->
