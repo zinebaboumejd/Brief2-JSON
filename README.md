@@ -7,3 +7,9 @@
 ## . transformer un ficher souse format Json à un arbre 
 ## . telecharger ou inserer le fichier 
 
+### lien de cahier de charge
+####  => https://www.canva.com/design/DAFOK5GPD_o/Re8owWW7IeSbiXfk6I3mJw/edit
+
+
+### Conception
+#### =>

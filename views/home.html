@@ -127,7 +127,7 @@
         Object.keys(data).forEach((e) => {
           const div = document.createElement("div");
           const child = document.createElement("input");
-          child.setAttribute("style", `margin-left: ${level * 20}px`);
+          child.setAttribute("style", `margin-left: ${level * 40}px`);
           child.setAttribute("disabled", "");
           child.value = typeof data[e] === "object" ? e : data[e];
           div.appendChild(child);
