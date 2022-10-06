@@ -5,5 +5,5 @@
 
 # L'objectif du site(spécification de site) :
 ## . transformer un ficher souse format Json à un arbre 
-## . telechqrger ou inserer le fichier 
+## . telecharger ou inserer le fichier 
 

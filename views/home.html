@@ -49,12 +49,7 @@
         </div>
       </div>
 
-      <div class="bg-white m-10 rounded-lg h-72 border-t-gray-200 border-8" id="tree">
-        <!-- <div class="flex justify-end gap-3 bg-black">
-               <textarea class="flex w-full text-black " placeholder="enter " name="" id="tree" cols="30" rows="10"></textarea>
-            </div> -->
-        <!-- button upload json -->
-
+      <!-- <div class="bg-white m-10 rounded-lg h-72 border-t-gray-200 border-8" id="tree">
         <br /><br />
         <button
           class="border-2 bg-white-color-black rounded w-40 h-10"
@@ -62,22 +57,9 @@
         >
           Click
         </button>
-      </div>
+      </div> -->
       <div id="tree" class="flex justify-end gap-3 bg-slate-500"></div>
     </div>
-    <!-- <div class="flex justify-end gap-3 bg-black">
-      <input
-        type="file"
-        id="file"
-        name="file"
-        class="flex w-full text-black"
-        placeholder="Upload "
-        name=""
-        id="tree"
-        cols="30"
-        rows="10"
-      />
-    </div> -->
     <div class="flex justify-center items-center w-full">
       <label
         for="dropzone-file"
@@ -109,7 +91,6 @@
         <input id="file" type="file" class="" />
       </label>
     </div>
-    <!-- div for show the json as a tree -->
     <div id="dispalytree" class="flex justify-end gap-3 bg-slate-500"></div>
 
     <script>
@@ -132,24 +113,6 @@
       let level = -1;
 
   const root = document.getElementById("root");
-//   const printObj = (ob, root) => {
-//     console.log(ob);
-//       level++;
-//       Object.keys(ob).forEach((e) => {
-//           const div = document.createElement("div");
-//           const child = document.createElement("input");
-//           child.setAttribute("style", margin-left: ${level * 20}px);
-//           child.setAttribute("disabled", "");
-//           child.value = typeof ob[e] === "object" ? e : ob[e];
-//           div.appendChild(child);
-//           parent.appendChild(div);
-//           if (typeof ob[e] === ("object" || "array")) printObj(ob[e], div);
-//       });
-//   };
-//   printObj(obj, root);
-
-
-   
       function displayJson(data) {
        
         const json = JSON.stringify(data, undefined, 4);
@@ -160,7 +123,7 @@
 
       }
       const TreeNode = (data, parent) => {
-        level++;
+        level++
         Object.keys(data).forEach((e) => {
           const div = document.createElement("div");
           const child = document.createElement("input");
@@ -232,23 +195,6 @@
       //     });
       // };
       // printObj(obj, root);
-    </script>
-    <script>
-      btn.addEventListener("click",const printObj = (ob, parent) => {
-          level++;
-          Object.keys(ob).forEach((e) => {
-              const div = document.createElement("div");
-              const child = document.createElement("input");
-              child.setAttribute("style", `margin-left: ${level * 20}px`);
-              child.setAttribute("disabled", "");
-              child.value = typeof ob[e] === "object" ? e : ob[e];
-              div.appendChild(child);
-              parent.appendChild(div);
-              if (typeof ob[e] === ("object" || "array")) printObj(ob[e], div);
-          });
-      };
-        printObj(obj, root);
-      )
     </script>
   </body>
 </html>
