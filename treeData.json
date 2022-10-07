@@ -1,73 +1,38 @@
-
 [
   {
-    "name": "json 1",
-    "parent": "null",
-    "children": [
+    "ID": "1",
+    "Name": "Senpai",
+    "Gender": "1",
+    "Class": "32",
+    "Seat": "15",
+    "Club": {
+      "ID": "1",
+      "Name": "Drama Club"
+    }
+  },
+  {
+    "ID": "2",
+    "Name": "Kou",
+    "Gender": "1",
+    "Class": "32",
+    "Seat": "15",
+    "Club": [
       {
-        "name": "Level : A",
-        "parent": "Top Level",
-        "children": [
-          {
-            "name": "Son of A",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A",
-            "parent": "Level 3: A"
-          }
-        ]
+        "ID": "1",
+        "Name": "Drama Club"
       },
       {
-        "name": "Level 2: B",
-        "parent": "Top Level",
-        "children": [
-          {
-            "name": "Son of A",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A",
-            "parent": "Level 3: A",
-            "children": [
-          {
-            "name": "Son of A",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A",
-            "parent": "Level 3: A",
-            "children": [
-          {
-            "name": "Son of A",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "Daughter of A",
-            "parent": "Level 3: A"
-          }
-        ]
-          }
-        ]
-          }
-        ]
+        "ID": "2",
+        "Name": "Music Club"
       }
     ]
+  },
+  {
+    "ID": "3",
+    "Name": "Yukinosh",
+    "Gender": "1",
+    "Class": "32",
+    "Seat": "15",
+    "Club":"club"
   }
 ]
